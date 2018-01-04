@@ -17,7 +17,9 @@
     ],
     "permissions": [
       	"storage",
-      	"unlimitedStorage"
+      	"unlimitedStorage",
+        "downloads",
+        "downloads.open"
     ],
     "browser_action": {
         "default_icon": "/activity/activity-icon-color-128.png"

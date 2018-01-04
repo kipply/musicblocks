@@ -545,12 +545,12 @@ function doSaveAbc (logo, desc) {
 
 
 function download (filename, data) {
-    var a = document.createElement('a');
-    a.setAttribute('href', data);
-    a.setAttribute('download', filename);
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    console.log(browser.runtime.getURL(filename))
+    browser.downloads.download({
+        url: browser.runtime.getURL(filename),
+        filename : 'untitled.tb',
+        saveAs: true
+    })
 };
 
 // Some block-specific code

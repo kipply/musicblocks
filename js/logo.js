@@ -2669,12 +2669,7 @@ function Logo () {
             break;
         case 'saveHeap':
             function downloadFile(filename, mimetype, content) {
-                var download = document.createElement('a');
-                download.setAttribute('href', 'data:' + mimetype + ';charset-utf-8,' + content);
-                download.setAttribute('download', filename);
-                document.body.appendChild(download);
-                download.click();
-                document.body.removeChild(download);
+                browser.downloads.download({url: filename})
             };
 
             if (args[0] && turtle in that.turtleHeaps) {
